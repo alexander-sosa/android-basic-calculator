@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- esta es la vista de la app -->
+
+<!-- Primero cambiamos el constraint layout a linear layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="30dp"
+    >
+
+    <!-- aqui habia un edit text pero no lo necesitamos -->
+
+    <!-- Creamos un campo para que ingresen datos, ajustamos sus propiedades-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa el primer numero"
+        android:textSize="30dp"
+        android:id="@+id/etNumero1"
+        android:textColor="#00BCD4"
+        android:inputType="number"
+        />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa el segundo numero"
+        android:textSize="30dp"
+        android:id="@+id/etNumero2"
+        android:textColor="#E91E63"
+        android:inputType="number"
+        />
+
+    <!-- para distribuir los botones, podemos crear un sub linear layout horizontal-->
+    <!-- los contenedores tienen etiquetas de apertura y cierre-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_marginTop="30dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="45dp"
+            android:background="#00BCD4"
+            android:layout_weight="1"
+            android:id="@+id/btSuma"
+
+            android:onClick="ocSuma"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="45dp"
+            android:background="#03A9F4"
+            android:layout_weight="1"
+            android:id="@+id/btResta"
+
+            android:onClick="ocResta"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textSize="45dp"
+            android:background="#2196F3"
+            android:layout_weight="1"
+            android:id="@+id/btMultiplicacion"
+
+            android:onClick="ocProd"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="45dp"
+            android:background="#3F51B5"
+            android:backgroundTint="#3F51B5"
+            android:layout_weight="1"
+            android:id="@+id/btDivision"
+
+            android:onClick="ocDiv"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textSize="45dp"
+            android:background="#673AB7"
+            android:backgroundTint="#673AB7"
+            android:layout_weight="1"
+            android:id="@+id/btAC"
+
+            android:onClick="ocClear"
+            />
+    </LinearLayout>
+
+    <!-- los componentes solo tienen etiqueta de apertura -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/tvRespuesta"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Resultado"
+        android:background="#FFC107"
+        android:padding="10dp"
+        />
+</LinearLayout>
